@@ -27,7 +27,6 @@ func init() {
 
 var defaultString = "Gh0st.code()"
 
-// main reads the os.Args and uses everything after the first one as input.
 func main() {
 	var fontName string
 	var inputString string
@@ -37,8 +36,8 @@ func main() {
 	flag.Parse()
 	fmt.Println("fontName:", fontName)
 	
-	if input == "" {
-		input = defaultString
+	if inputString == "" {
+		inputString = defaultString
 	}
 	
 	fs, err := fs.New()
@@ -49,7 +48,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	myFigure := figure.NewFigureWithFont(input, font, true)
+	myFigure := figure.NewFigureWithFont(inputString, font, true)
 	buf := new(bytes.Buffer)
 	figure.Write(buf, myFigure)
 
