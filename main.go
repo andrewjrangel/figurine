@@ -35,7 +35,7 @@ func main() {
 		input = defaultString
 	}
 
-	fontName := fontName, flag.String("font-name", "/Binary.flf", "font full file name")
+	fontName := flag.String("font-name", "/Binary.flf", "font full file name")
 	
 	fs, err := fs.New()
 	if err != nil {
