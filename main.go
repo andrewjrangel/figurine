@@ -33,7 +33,6 @@ func main() {
 	flag.StringVar(&inputString, "text", "Longplay Studios", "text you want it to print out")
 	flag.StringVar(&fontName, "font-name", "/Binary.flf", "font full file name")
 	flag.Parse()
-	fmt.Println("fontName:", fontName)
 	
 	if inputString == "" {
 		inputString = defaultString
