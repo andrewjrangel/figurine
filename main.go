@@ -11,7 +11,6 @@ import (
 	"os"
 	"time"
 	"flag"
-	"fmt"
 
 	// registers the binary data
 	_ "github.com/arsham/figurine/statik"
