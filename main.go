@@ -11,6 +11,7 @@ import (
 	"os"
 	"strings"
 	"time"
+	"flag"
 
 	// registers the binary data
 	_ "github.com/arsham/figurine/statik"
@@ -34,7 +35,8 @@ func main() {
 		input = defaultString
 	}
 
-	fontName = fontNames[rand.Intn(len(fontNames))]
+	fontName := fontName, flag.String("font-name", "/Binary.flf", "font full file name")
+	
 	fs, err := fs.New()
 	if err != nil {
 		log.Fatal(err)
