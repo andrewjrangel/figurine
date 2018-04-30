@@ -25,20 +25,21 @@ func init() {
 	rand.Seed(time.Now().UnixNano())
 }
 
-var defaultString = "Arsham"
+var defaultString = "Gh0st.code()"
 
 // main reads the os.Args and uses everything after the first one as input.
 func main() {
 	var fontName string
-
-	input := strings.Join(os.Args[1:], " ")
-	if input == "" {
-		input = defaultString
-	}
+	var inputString string
 	
+	flag.StringVar(&inputString, "text", "Longplay Studios", "text you want it to print out")
 	flag.StringVar(&fontName, "font-name", "/Binary.flf", "font full file name")
 	flag.Parse()
 	fmt.Println("fontName:", fontName)
+	
+	if input == "" {
+		input = defaultString
+	}
 	
 	fs, err := fs.New()
 	if err != nil {
